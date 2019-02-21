@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Callback function - fullPage.js</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="fullPage callback function." />
+    <meta
+      name="keywords"
+      content="fullpage,jquery,demo,callback,function,event"
+    />
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="./dist/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+    <link href="./css/1.bundle.css" />
+    <link href="./css/bundle.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .section {
+        /*         background-image: url(https://raw.githubusercontent.com/YuriKovalchuk/pic/master/1.png);
+ */
+        background-color: cover;
+        height: 100vh;
+      }
+    </style>
+    <!--[if IE]>
+      <script type="text/javascript">
+        var console = { log: function() {} };
+      </script>
+    <![endif]-->
+  </head>
+  <body class="animated fadeIn fp-viewing-home">
+    <div
+      style="position:fixed;top:50px;left:50px;color:white;z-index:999;"
+      id="callbacksDiv"
+    ></div>
+
+    <div
+      style="position:fixed;top:50px;left:50px;color:white;z-index:999;"
+      id="callbacksDiv"
+    ></div>
+
+    <!--     <ul id="menu">
+      <li data-menuanchor="firstPage"><a href="#firstPage">First slide</a></li>
+      <li data-menuanchor="secondPage">
+        <a href="#secondPage">Second slide</a>
+      </li>
+      <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
+    </ul>
+ -->
+    <div id="fullpage">
+      <div
+        class="section "
+        id="section0"
+        style="display: none; background-image: url(https://raw.githubusercontent.com/YuriKovalchuk/pic/master/1.png);"
+      ></div>
+      <div
+        class="section"
+        id="section1"
+        style="background-image: url(https://raw.githubusercontent.com/YuriKovalchuk/pic/master/2.png);"
+      ></div>
+      <div
+        class="section"
+        id="section2"
+        style="background-image: url(https://raw.githubusercontent.com/YuriKovalchuk/pic/master/2.png);"
+      ></div>
+      <div
+        class="section"
+        id="section3"
+        style="background-image: url(https://raw.githubusercontent.com/YuriKovalchuk/pic/master/2.png);"
+      ></div>
+    </div>
+
+    <header class="header">
+      <div class="drawer-call-btn">
+        <a href="tel:5555555555"><i class="fas fa-phone"></i></a>
+      </div>
+      <div class="logo">
+        <a href="."><img src="./img/logo.png" alt="Sponsor Energy Co"/></a>
+      </div>
+      <ul id="headerMenu">
+        <li data-menuanchor="home" class="active"><a href="#">HOME</a></li>
+        <li data-menuanchor="residential"><a href="#">RESIDENTIAL</a></li>
+        <li data-menuanchor="tv_internet"><a href="#">TV&INTERNET</a></li>
+        <li data-menuanchor="business"><a href="#">BUSINESS</a></li>
+        <li data-menuanchor="aboutus"><a href="#">ABOUT US</a></li>
+        <li><a href="#">COMMUNITY</a></li>
+        <li><a href="#">CONTACTs</a></li>
+      </ul>
+      <div class="drawer-btn">
+        <div class="btn-menu"><span></span></div>
+      </div>
+    </header>
+    <footer class="footer">
+      <div class="copyright"><span>© 2019, SPONSOR ENERGY Co.</span></div>
+      <div class="social">
+        <ul>
+          <li>
+            <a target="_blank" href="https://www.facebook.com/fridaysockco"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.twitter.com/fridaysockco"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.instagram.com/fridaysockco"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/company/friday-sock-co"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.youtube.com/c/Fridaysockco"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <div id="fp-nav" class="fp-left fp-show-active">
+      <ul>
+        <li>
+          <a href="#welcome" class="active"
+            ><span class="fp-sr-only">WELCOME</span><span></span>
+            <div class="fp-tooltip fp-left">WELCOME</div></a
+          >
+        </li>
+        <li>
+          <a href="#thefreedomplan"
+            ><span class="fp-sr-only">THE FREEDOM PLAN</span><span></span>
+            <div class="fp-tooltip fp-left">THE FREEDOM PLAN</div></a
+          >
+        </li>
+        <li>
+          <a href="#sponsorinternet"
+            ><span class="fp-sr-only">SPONSOR INTERNET</span><span></span>
+            <div class="fp-tooltip fp-left">SPONSOR INTERNET</div></a
+          >
+        </li>
+        <li>
+          <a href="#aboutus"
+            ><span class="fp-sr-only">ABOUT US</span><span></span>
+            <div class="fp-tooltip fp-left">ABOUT US</div></a
+          >
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="./dist/jquery.ripples.js"></script>
+    <script type="text/javascript" src="./dist/fullpage.js"></script>
+    <script type="text/javascript">
+      //using document ready...
+
+      $(document).ready(function() {
+        $("#section0").fadeIn(3000);
+        
+        var sections = $('.section');
+        sections.ripples({
+          dropRadius: 200,
+          perturbance: 0.2
+        });
+
+        var deleteLog = false;
+        //initialising fullpage.js in the jQuery way
+        $("#fullpage").fullpage({
+          anchors: ["welcome", "thefreedomplan", "sponsorinternet", "aboutus"],
+          navigation: true,
+          navigationPosition: "left",
+          navigationTooltips: [
+            "WELCOME",
+            "THE FREEDOM PLAN",
+            "SPONSOR INTERNET",
+            "ABOUT US"
+          ],
+          showActiveTooltip: true,
+          animateAnchor: true,
+          recordHistory: true,
+          lazyLoading: true,
+          fixedElements: ".header, .footer",
+          sectionsColor: ["#e0e0e0", "#0798ec", "#fc6c7c", "#fec401"],
+          slidesNavigation: true,
+          onLeave: function(index, nextIndex, direction) {
+            if (deleteLog) {
+              document.getElementById("callbacksDiv").innerHTML = "";
+            }
+            document.getElementById("callbacksDiv").innerHTML +=
+              "<p>onLeave - index:" +
+              index +
+              " nextIndex:" +
+              nextIndex +
+              " direction:" +
+              direction +
+              "</p>";
+
+            console.log(
+              "onLeave--" +
+                "index: " +
+                index +
+                " nextIndex: " +
+                nextIndex +
+                " direction: " +
+                direction
+            );
+          },
+          onSlideLeave: function(
+            anchorLink,
+            index,
+            slideIndex,
+            direction,
+            nextSlideIndex
+          ) {
+            if (deleteLog) {
+              document.getElementById("callbacksDiv").innerHTML = "";
+            }
+            document.getElementById("callbacksDiv").innerHTML +=
+              "<p>onSlideLeave - anchorLink:" +
+              anchorLink +
+              " index:" +
+              index +
+              " slideIndex:" +
+              slideIndex +
+              " direction:" +
+              direction +
+              " nextSlideIndex:" +
+              nextSlideIndex +
+              "</p>";
+            console.log(
+              "onSlideLeave--" +
+                "anchorLink: " +
+                anchorLink +
+                " index: " +
+                index +
+                " slideIndex: " +
+                slideIndex +
+                " direction: " +
+                direction
+            );
+          },
+          afterRender: function() {
+            document.getElementById("callbacksDiv").innerHTML +=
+              "<p>afterRender</p>";
+            console.log("afterRender");
+          },
+          afterResize: function() {
+            document.getElementById("callbacksDiv").innerHTML +=
+              "<p>afterResize</p>";
+            console.log("afterResize");
+          },
+          afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+            document.getElementById("callbacksDiv").innerHTML +=
+              "<p>afterSlideLoad - anchorLink:" +
+              anchorLink +
+              " index:" +
+              index +
+              " slideAnchor:" +
+              slideAnchor +
+              " slideIndex:" +
+              slideIndex +
+              "</p>";
+            deleteLog = true;
+            console.log(
+              "afterSlideLoad--" +
+                "anchorLink: " +
+                anchorLink +
+                " index: " +
+                index +
+                " slideAnchor: " +
+                slideAnchor +
+                " slideIndex: " +
+                slideIndex
+            );
+            console.log("----------------");
+          },
+          afterLoad: function(anchorLink, index) {
+            console.log("after Load  " + index);
+            document.getElementById("callbacksDiv").innerHTML +=
+              "<p>afterLoad - anchorLink:" +
+              anchorLink +
+              " index:" +
+              index +
+              "</p>";
+            deleteLog = true;
+            console.log("===============");
+            console.log(
+              "afterLoad--" + "anchorLink: " + anchorLink + " index: " + index
+            );
+          }
+        });
+
+        // calling fullpage.js methods using jQuery
+        $("#moveSectionUp").click(function(e) {
+          e.preventDefault();
+          $.fn.fullpage.moveSectionUp();
+        });
+
+        $("#moveSectionDown").click(function(e) {
+          e.preventDefault();
+          $.fn.fullpage.moveSectionDown();
+        });
+      });
+    </script>
+  </body>
+</html>
